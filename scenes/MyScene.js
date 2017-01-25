@@ -19,8 +19,8 @@ export default class MyScene extends Component {
   }
 }
 
-MyScene.propTypes = {
-  title: PropTypes.string.isRequired,
-  onForward: PropTypes.func.isRequired,
-  onBack: PropTypes.func.isRequired,
-};
+// MyScene.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   onForward: PropTypes.func.isRequired,
+//   onBack: PropTypes.func.isRequired,
+// };
