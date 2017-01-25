@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, TextInput, View, Image, Button, Alert } from 'react-native';
-import dota from './styles/styles';
+import PlaceModel from './models/PlaceModel';
+import PlaceService from './models/PlaceService';
 
 class LoginScene extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LoginScene extends Component {
 
   render() {
     var s = require('./styles/styles');
+    testRealm();
     return (
       <Image source={require('./img/bg_james.png')} style={{
         flex: 1,
@@ -68,6 +70,13 @@ function login(email, password) {
       .catch((error) => {
         console.error(error);
       });
-  }
+}
+
+function testRealm(){
+  console.log(PlaceService.findAll().length);
+  var place = new PlaceModel();
+  place.name = 'dota';
+  PlaceService.save(place);
+}
 
 AppRegistry.registerComponent('ReactApp', () => LoginScene);
