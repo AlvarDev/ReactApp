@@ -9,6 +9,16 @@ module.exports = StyleSheet.create({
     marginBottom: 8,
     color: '#ffffff',
     fontSize: 12
+  },
+
+  backgroundImage:{
+    flex: 1,
+    justifyContent: 'center',
+    padding: 16,
+    width: null,
+    height: null,
+    resizeMode: 'stretch',
+    alignItems: 'center'
   }
 
 });

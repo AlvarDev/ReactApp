@@ -1,5 +1,4 @@
 import Realm from 'realm';
-// import PlaceModel from './models/PlaceModel';
 
 let repository = new Realm({
     schema: [{
@@ -25,7 +24,7 @@ let PlaceService = {
     })
   },
 
-  update: function(todo) {
+  update: function(place) {
     repository.write(() => {
       repository.create('Place', place, true);
     });
