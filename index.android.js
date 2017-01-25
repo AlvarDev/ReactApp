@@ -16,9 +16,9 @@ class LoginScene extends Component {
     var style = require('./styles/styles');
     testRealm();
     return (
-      <Image source={require('./img/bg_james.png')} style={style.backgroundImage}>
+      <Image source={require('./img/bs.jpg')} style={style.backgroundImage}>
         <Image
-          source={require('./img/james_white.png')}
+          source={require('./img/logo.png')}
           style={{width: 170, height: 100, marginBottom: 56, resizeMode: 'cover'}}/>
 
         <TextInput
@@ -37,7 +37,7 @@ class LoginScene extends Component {
         <Button
           onPress={()=>validate(this.state.email,this.state.password)}
           title="               Login               "
-          color="#592c5e"
+          color="#9c3424"
           accessibilityLabel="Learn more about this purple button"/>
 
       </Image>

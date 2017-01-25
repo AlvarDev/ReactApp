@@ -17,8 +17,8 @@ module.exports = StyleSheet.create({
     padding: 16,
     width: null,
     height: null,
-    resizeMode: 'stretch',
-    alignItems: 'center'
+    resizeMode: 'cover',
+    alignItems: 'center',
   }
 
 });
