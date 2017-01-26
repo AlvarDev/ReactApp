@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { AppRegistry, Text, TextInput, View, Image, Button, Alert } from 'react-native';
 import UserModel from '../models/UserModel';
 import UserService from '../models/UserService';
 
+var myNav;
 export default class LoginScene extends Component {
   constructor(props) {
     super(props);
+    myNav = this.props.navigator;
     this.state = {
       email: '',
       password: ''
@@ -45,6 +47,12 @@ export default class LoginScene extends Component {
   }
 }
 
+function goTo(scene){
+  myNav.push({
+    name: scene
+  })
+}
+
 const validate = (email, password) => {
   if(email == '' && password == ''){
     Alert.alert('empty fields');
@@ -53,6 +61,7 @@ const validate = (email, password) => {
   }
 };
 
+
 function login(email, password) {
     // return fetch('https://raw.githubusercontent.com/AlvarDev/HostJson/master/loginerror.js')
     return fetch('https://raw.githubusercontent.com/AlvarDev/HostJson/master/login.js')
@@ -60,6 +69,7 @@ function login(email, password) {
       .then((rj) => {
         UserService.save(rj.user);
         console.log(rj.success ? rj.user : rj.message);
+        goTo('LaunchScene');
       })
       .catch((error) => {
         console.error(error);
@@ -70,4 +80,4 @@ function testRealm(){
   console.log(UserService.findAll().length);
 }
 
-AppRegistry.registerComponent('ReactApp', () => LoginScene);
+// AppRegistry.registerComponent('ReactApp', () => LoginScene);

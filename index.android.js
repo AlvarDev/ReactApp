@@ -9,18 +9,28 @@ import UserService from './models/UserService';
 class MainNav extends Component {
 
   renderScene(route, navigator) {
-     return React.createElement(route.component, { ...this.props, ...route.passProps, route, navigator } )
-   }
+    switch (route.name) {
+      case 'LoginScene':
+        return <LoginScene navigator={navigator} />
+        break;
+      case 'LaunchScene':
+        return <LaunchScene navigator={navigator} />
+        break;
+      default:
+        return <LoginScene navigator={navigator} />
+    }
+  }
 
   render() {
     validateSession();
     return (
       <Navigator
-        initialRoute={{ component: validateSession() ? LaunchScene : LoginScene}}
+        initialRoute={{ name: !validateSession() ? 'LoginScene' : 'LaunchScene' }}
         renderScene={ this.renderScene } />
     )
   }
 }
+
 
 function validateSession(){
   return UserService.findAll().length == 1;
