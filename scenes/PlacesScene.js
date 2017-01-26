@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View, Image, Button} from 'react-native';
+import { ListView, Text, View, Image, Button} from 'react-native';
 
+var myNav;
 export default  class PlacesScene extends Component {
   constructor(props) {
     super(props);
+    myNav = this.props.navigator;
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
@@ -61,12 +63,13 @@ export default  class PlacesScene extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1}}>
+      <Image source={require('../img/placesbg.jpg')} style={{flex: 1, width: null,
+      height: null, resizeMode: 'cover',}}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => rowLayout(rowData) }
         />
-      </View>
+      </Image>
     );
   }
 }
@@ -78,11 +81,11 @@ const rowLayout= (rowData) => {
     <View style={style.rowContainer}>
       <Image source={{uri: rowData.urlImage}} style={style.image}/>
       <View style={style.infoContainer}>
-        <Text style={{textAlign: 'justify', fontSize: 12, fontWeight: 'bold'}}>{rowData.name}</Text>
-        <Text style={{textAlign: 'justify', fontSize: 12, marginBottom:8}}>{rowData.address}</Text>
+        <Text style={{textAlign: 'justify', fontSize: 12, fontWeight: 'bold', color: '#ffffff'}}>{rowData.name}</Text>
+        <Text style={{textAlign: 'justify', fontSize: 12, marginBottom:8, color: '#ffffff'}}>{rowData.address}</Text>
         <Button
-          onPress={()=>goToDetails(rowData.name)}
-          title="               Details               "
+          onPress={()=>goToDetails(rowData)}
+          title="Details"
           color="#9c3424"
           accessibilityLabel="The International"/>
       </View>
@@ -90,8 +93,13 @@ const rowLayout= (rowData) => {
   );
 };
 
-const goToDetails = (name) => {
-  console.log(name);
+const goToDetails = (placeItem) => {
+  myNav.push({
+    name: 'DetailScene',
+    passProps: {
+      place: placeItem
+    }
+  })
 };
 
 

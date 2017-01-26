@@ -26,6 +26,7 @@
 		2DF41D6B3C5044B5887405D7 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF0E1F7D584046B4646ABB /* libRealmReact.a */; };
 		229ECA7DD9404AB69D971439 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3EB113F21C42DF8D293388 /* libc++.tbd */; };
 		E3E095DD4902422092D1514C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EE2D6ACB8473797C314C0 /* libz.tbd */; };
+		76BE876238DF4F6881553443 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 554A8AEAEB9F4304A6B00BF3 /* libAirMaps.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,8 @@
 		87AF0E1F7D584046B4646ABB /* libRealmReact.a */ = {isa = PBXFileReference; name = "libRealmReact.a"; path = "libRealmReact.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		5D3EB113F21C42DF8D293388 /* libc++.tbd */ = {isa = PBXFileReference; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 		DF0EE2D6ACB8473797C314C0 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		14E666E0C67C4559A1D3AE89 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		554A8AEAEB9F4304A6B00BF3 /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,7 @@
 				2DF41D6B3C5044B5887405D7 /* libRealmReact.a in Frameworks */,
 				229ECA7DD9404AB69D971439 /* libc++.tbd in Frameworks */,
 				E3E095DD4902422092D1514C /* libz.tbd in Frameworks */,
+				76BE876238DF4F6881553443 /* libAirMaps.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				05F8C36581D3489895A4DA50 /* RealmReact.xcodeproj */,
+				14E666E0C67C4559A1D3AE89 /* AirMaps.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -865,6 +871,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactApp.app/ReactApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};

@@ -21,13 +21,21 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
 
+  backgroundImageDetail:{
+    flex: 1,
+    padding: 16,
+    width: null,
+    height: null,
+    resizeMode: 'cover',
+  },
+
   rowContainer:{
     flex: 1,
     flexDirection: 'row',
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 16,
-    paddingRight: 16
+    paddingRight: 16,
   },
 
   infoContainer:{
@@ -40,9 +48,22 @@ module.exports = StyleSheet.create({
     height: 120
   },
 
+  imageDetail:{
+    flex: 1,
+    margin: 16
+  },
+
   text:{
-    textAlign: 'justify',
-    fontSize: 12
+    textAlign: 'center',
+    fontSize: 18,
+    color: '#ffffff'
+  },
+
+  textAddress:{
+    fontSize: 12,
+    color: '#ffffff',
+    fontStyle: 'italic',
+    textAlign: 'center'
   }
 
 });
