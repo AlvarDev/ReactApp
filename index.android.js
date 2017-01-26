@@ -41,7 +41,8 @@ class MainNav extends Component {
 
 
 function validateSession(){
-  return UserService.findAll().length >= 1;
+  console.log(UserService.find()[0] != null);
+  return UserService.find()[0] != null;
 }
 
 AppRegistry.registerComponent('ReactApp', () => MainNav);

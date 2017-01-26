@@ -13,8 +13,8 @@ let repository = new Realm({
 });
 
 let UserService = {
-  findAll: function() {
-    return repository.objects('User');
+  find: function() {
+    return repository.objects('User').slice(0, 1);
   },
 
   save: function(user) {
@@ -26,6 +26,12 @@ let UserService = {
   update: function(user) {
     repository.write(() => {
       repository.create('User', user, true);
+    });
+  },
+
+  delete: function(user){
+    repository.write(() => {
+      repository.delete(user);
     });
   }
 };

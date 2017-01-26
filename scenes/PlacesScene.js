@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ListView, Text, View, Image, Button} from 'react-native';
+import UserService from '../models/UserService';
 
 var myNav;
 export default  class PlacesScene extends Component {
@@ -65,6 +66,14 @@ export default  class PlacesScene extends Component {
     return (
       <Image source={require('../img/placesbg.jpg')} style={{flex: 1, width: null,
       height: null, resizeMode: 'cover',}}>
+
+      <Button
+        onPress={()=>logout()}
+        title="Logout"
+        color="#9c3424"
+        accessibilityLabel="The International"/>
+
+
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => rowLayout(rowData) }
@@ -77,7 +86,6 @@ export default  class PlacesScene extends Component {
 const rowLayout= (rowData) => {
   var style = require('../styles/styles');
   return (
-
     <View style={style.rowContainer}>
       <Image source={{uri: rowData.urlImage}} style={style.image}/>
       <View style={style.infoContainer}>
@@ -99,6 +107,13 @@ const goToDetails = (placeItem) => {
     passProps: {
       place: placeItem
     }
+  })
+};
+
+const logout = () => {
+  UserService.delete(UserService.find()[0]);
+  myNav.resetTo({
+    name: 'LoginScene'
   })
 };
 

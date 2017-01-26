@@ -16,7 +16,6 @@ export default class LoginScene extends Component {
 
   render() {
     var style = require('../styles/styles');
-    testRealm();
     return (
       <Image source={require('../img/bs.jpg')} style={style.backgroundImage}>
         <Image
@@ -69,15 +68,9 @@ function login(email, password) {
       .then((rj) => {
         UserService.save(rj.user);
         console.log(rj.success ? rj.user : rj.message);
-        goTo('LaunchScene');
+        goTo('PlacesScene');
       })
       .catch((error) => {
         console.error(error);
       });
 }
-
-function testRealm(){
-  console.log(UserService.findAll().length);
-}
-
-// AppRegistry.registerComponent('ReactApp', () => LoginScene);
