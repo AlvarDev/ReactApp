@@ -19,6 +19,30 @@ module.exports = StyleSheet.create({
     height: null,
     resizeMode: 'cover',
     alignItems: 'center',
+  },
+
+  rowContainer:{
+    flex: 1,
+    flexDirection: 'row',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 16,
+    paddingRight: 16
+  },
+
+  infoContainer:{
+    flex: 1,
+    padding: 8
+  },
+
+  image:{
+    flex:1,
+    height: 120
+  },
+
+  text:{
+    textAlign: 'justify',
+    fontSize: 12
   }
 
 });

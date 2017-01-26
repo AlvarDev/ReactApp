@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { AppRegistry, Text, TextInput, View, Image, Button, Alert } from 'react-native';
 import UserModel from '../models/UserModel';
 import UserService from '../models/UserService';

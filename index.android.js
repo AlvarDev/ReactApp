@@ -3,6 +3,7 @@ import { AppRegistry, Navigator } from 'react-native';
 
 import LoginScene from './scenes/LoginScene';
 import LaunchScene from './scenes/LaunchScene';
+import PlacesScene from './scenes/PlacesScene';
 
 import UserService from './models/UserService';
 
@@ -16,6 +17,9 @@ class MainNav extends Component {
       case 'LaunchScene':
         return <LaunchScene navigator={navigator} />
         break;
+      case 'PlacesScene':
+        return <PlacesScene navigator={navigator} />
+        break;
       default:
         return <LoginScene navigator={navigator} />
     }
@@ -25,7 +29,7 @@ class MainNav extends Component {
     validateSession();
     return (
       <Navigator
-        initialRoute={{ name: !validateSession() ? 'LoginScene' : 'LaunchScene' }}
+        initialRoute={{ name: validateSession() ? 'PlacesScene' : 'LoginScene'}}
         renderScene={ this.renderScene } />
     )
   }
@@ -33,7 +37,7 @@ class MainNav extends Component {
 
 
 function validateSession(){
-  return UserService.findAll().length == 1;
+  return UserService.findAll().length >= 1;
 }
 
 AppRegistry.registerComponent('ReactApp', () => MainNav);
