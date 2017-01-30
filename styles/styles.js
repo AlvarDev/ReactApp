@@ -64,6 +64,17 @@ module.exports = StyleSheet.create({
     color: '#ffffff',
     fontStyle: 'italic',
     textAlign: 'center'
+  },
+
+  loadingStyle:{
+    backgroundColor: 'rgba(156, 52, 36, 0.45)',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    top: 0,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 
 });
