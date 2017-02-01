@@ -89,8 +89,8 @@ const rowLayout= (rowData) => {
     <View style={style.rowContainer}>
       <Image source={{uri: rowData.urlImage}} style={style.image}/>
       <View style={style.infoContainer}>
-        <Text style={{textAlign: 'justify', fontSize: 12, fontWeight: 'bold', color: '#ffffff'}}>{rowData.name}</Text>
-        <Text style={{textAlign: 'justify', fontSize: 12, marginBottom:8, color: '#ffffff'}}>{rowData.address}</Text>
+        <Text style={style.rowTitle}>{rowData.name}</Text>
+        <Text style={style.rowDesc}>{rowData.address}</Text>
         <Button
           onPress={()=>goToDetails(rowData)}
           title="Details"

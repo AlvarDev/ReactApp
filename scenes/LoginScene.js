@@ -18,13 +18,13 @@ export default class LoginScene extends Component {
     if(this.state.email == '' || this.state.password == ''){
       Alert.alert('empty fields');
     }else{
-      this.state.loading = true
-      this.forceUpdate();
       this.login();
     }
   }
 
   login(){
+    this.state.loading = true
+    this.forceUpdate();
     fetch('https://raw.githubusercontent.com/AlvarDev/HostJson/master/login.js')
       .then((response) => response.json())
       .then((rj) => {

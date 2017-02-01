@@ -36,5 +36,4 @@ let UserService = {
   }
 };
 
-
 module.exports = UserService;

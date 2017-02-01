@@ -41,7 +41,6 @@ class MainNav extends Component {
 
 
 function validateSession(){
-  console.log(UserService.find()[0] != null);
   return UserService.find()[0] != null;
 }
 

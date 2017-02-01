@@ -1,26 +1,40 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, Image, TextInput } from 'react-native';
 
 export default class MyScene extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      championship: ''
+    };
+  }
+
   render() {
+    let style = require('../styles/MySceneStyle');
     return (
-      <View>
-        <Text>Current Scene: {this.props.title}</Text>
+      <View style={style.mySceneCointainer}>
+        <Image
+          source={require('../img/logo.png')}
+          style={style.mySceneImage}/>
 
-        <TouchableHighlight onPress={this.props.onForward}>
-          <Text>Tap me to load the next scene</Text>
-        </TouchableHighlight>
+        <TextInput
+          style={{height: 40, width: 200}}
+          placeholder="Type here the championship"
+          onChangeText={(championship) => this.setState({championship})}/>
 
-        <TouchableHighlight onPress={this.props.onBack}>
-          <Text>Tap me to go back</Text>
-        </TouchableHighlight>
+        <Text style={{color: '#9c3424'}}>{this.state.championship}</Text>
+
+        <YearScene year='2017' />
       </View>
-    )
+    );
   }
 }
 
-// MyScene.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   onForward: PropTypes.func.isRequired,
-//   onBack: PropTypes.func.isRequired,
-// };
+export class YearScene extends Component {
+  render(){
+    return(
+      <Text style={{color: '#9c3424', fontWeight: 'bold'}}>{this.props.year}</Text>
+    );
+  }
+}

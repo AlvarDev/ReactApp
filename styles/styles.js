@@ -75,6 +75,21 @@ module.exports = StyleSheet.create({
     top: 0,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+
+  rowTitle: {
+    textAlign: 'justify',
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#ffffff'
+  },
+
+  rowDesc: {
+    textAlign: 'justify',
+    fontSize: 12,
+    marginBottom:8,
+    color: '#ffffff'
   }
+
 
 });
