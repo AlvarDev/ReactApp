@@ -5,6 +5,7 @@ import LoginScene from './scenes/LoginScene';
 import LaunchScene from './scenes/LaunchScene';
 import PlacesScene from './scenes/PlacesScene';
 import DetailScene from './scenes/DetailScene';
+import GeolocationExample from './scenes/GeolocationExample';
 
 import UserService from './models/UserService';
 
@@ -24,6 +25,9 @@ class MainNav extends Component {
       case 'DetailScene':
         return <DetailScene navigator={navigator} {...route.passProps}  />
         break;
+      case 'GeolocationExample':
+        return <GeolocationExample nav={navigator} />
+        break;
       default:
         return <LoginScene navigator={navigator} />
     }
@@ -33,7 +37,7 @@ class MainNav extends Component {
     validateSession();
     return (
       <Navigator
-        initialRoute={{ name: validateSession() ? 'PlacesScene' : 'LoginScene'}}
+        initialRoute={{ name: validateSession() ? 'PlacesScene' : 'GeolocationExample'}}
         renderScene={ this.renderScene } />
     )
   }

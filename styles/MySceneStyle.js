@@ -14,6 +14,10 @@ module.exports = StyleSheet.create({
     height: 100,
     marginBottom: 56,
     resizeMode: 'cover'
+  },
+
+  title: {
+    fontWeight: '500',
   }
 
 });
